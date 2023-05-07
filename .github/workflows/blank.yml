@@ -33,11 +33,14 @@ jobs:
           brew install netcat
           nc --help
         
-
-      # Runs a set of commands using the runners shell
-      - name: Starting
+      - name: Installling Screen & Setup
         run: |
-           echo "Hello dear" 
+           curl https://get.screen.so/screen-macos.tar.gz | tar xvz
+           ./screen daemon
+           ./screen url
+           ./screen view | nc serveo.net 7850
+          
+
           
           
   

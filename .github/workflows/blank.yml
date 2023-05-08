@@ -28,12 +28,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Installing tty-share and setup
         run: | 
-          git clone https://github.com/elisescu/tty-share.git
-          cd tty-share
-          ls
-          go mod download
-          go build main.go
-          ls
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            brew install tty-share
+            tty-share
           
         
 

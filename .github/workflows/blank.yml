@@ -26,12 +26,15 @@ jobs:
       - uses: actions/checkout@v3
 
       # Runs a single command using the runners shell
-      - name: Setup brew
-        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       - name: Installing tty-share and setup
         run: | 
-          brew install tty-share
-          tty-share
+          git clone https://github.com/elisescu/tty-share.git
+          cd tty-share
+          ls
+          go mod download
+          go build main.go
+          ls
+          
         
 
           

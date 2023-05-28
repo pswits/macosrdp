@@ -29,7 +29,9 @@ jobs:
       - name: Installing tty-share and setup
         run: | 
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+            export HOMEBREW_NO_INSTALL_CLEANUP=TRUE
             brew install tty-share
+            
             tty-share --public
           
         
